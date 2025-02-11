@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple CAPTCHA Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .captcha-box { font-size: 24px; font-weight: bold; background-color: lightgray; padding: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+<h2>Enter the CAPTCHA</h2>
+<div class="captcha-box" th:text="${captcha}"></div>
+
+<form action="/api/V1/captcha" method="post">
+    <input type="text" name="userCaptcha" required placeholder="Enter CAPTCHA here"/>
+    <button type="submit">Verify</button>
+</form>
+
+<h3 th:if="${message}" th:text="${message}"></h3>
+</body>
+</html>
