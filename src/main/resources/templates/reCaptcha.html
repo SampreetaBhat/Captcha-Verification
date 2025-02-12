@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Google reCAPTCHA Verification</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<h2>Verify You Are Human</h2>
+
+<form action="/api/V1/captcha" method="post">
+    <div class="g-recaptcha" data-sitekey="6LcCl9QqAAAAAJDDNmVtDqrrP7FpIXrJQvXJw2cg"></div>
+    <br/>
+    <button type="submit">Verify</button>
+</form>
+
+<h3 th:if="${message}" th:text="${message}"></h3>
+</body>
+</html>
